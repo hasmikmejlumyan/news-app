@@ -16,8 +16,8 @@ const initialState: ITodoNewsState = {
 
 const todoNewsReducer = createReducer(initialState, (builder) => {
     builder
-        .addCase(todoNewsActions.getTodoInitialData.fulfilled, (state, action) => {
-            state.list = action.payload;
+        .addCase(todoNewsActions.getTodoInitialData.fulfilled, (state, {payload}) => {
+            state.list = payload;
             state.loading = false;
             state.error = false;
         })

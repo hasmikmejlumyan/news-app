@@ -1,0 +1,11 @@
+@import "mixins";
+@import "variables";
+
+
+body {
+  background-color: $body-background;
+}
+.container {
+  width: 95%;
+  margin: 40px auto;
+}

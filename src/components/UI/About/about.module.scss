@@ -1,0 +1,56 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.about-section {
+  @include flex-box(center, center, column);
+}
+
+.about__welcome-text {
+  @include text-styles(30px, 600, $titles-text-color);
+
+  span {
+    color: rgb(251 113 133);
+    font-size: 45px;
+  }
+}
+
+.about-info {
+  @include flex-box(space-between, center, row);
+  margin: 50px 0;
+}
+
+.about-info__discover {
+  background-color: $transparent-background;
+  padding: 20px;
+}
+
+.about-info__discover-image {
+  width: 100%;
+  margin: 10px 0;
+  @include flex-box(center, center, row);
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.about-info__discover-info {
+  width: 280px;
+  text-align: center;
+}
+
+.about-info__discover-text {
+  margin: 5px 0;
+  @include text-styles(16px, 500, $text-color);
+}
+
+.about-info__discover-info-types {
+  margin: 10px 0;
+  @include flex-box(flex-start, center, column);
+
+
+  li {
+    list-style: initial;
+  }
+}

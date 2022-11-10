@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.header-nav {
+  background-color: $header-background;
+  height: 60px;
+  padding: 10px 20px;
+  @include flex-box(space-between, center, row);
+}
+
+.header-logo__box-content {
+  width: 60px;
+  height: auto;
+  position: relative;
+
+  a {
+    display: block;
+  }
+}
+
+.header-logo__news {
+  position: absolute;
+  bottom: 6px;
+  left: 45px;
+  background: -webkit-linear-gradient($menu-items-color, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-logo__image {
+  width: 100%;
+  height: auto;
+}
+
+// navigation
+.navigation__menu {
+  @include flex-box(space-between, center, row);
+}
+
+.navigation__menu-list {
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  a {
+    @include text-styles(18px, 600, $menu-items-color);
+
+    &:after {
+      display: block;
+      content: '';
+      height: 2px;
+      width: 0;
+      background-color: $menu-items-color;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+        transition: width .2s linear;
+      }
+    }
+  }
+}
