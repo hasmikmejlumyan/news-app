@@ -15,11 +15,14 @@
 }
 
 .about-info {
-  @include flex-box(space-between, center, row);
+  width: 100%;
+  @include flex-box(space-evenly, center, row);
+  flex-wrap: wrap;
   margin: 50px 0;
 }
 
 .about-info__discover {
+  min-height: 280px;
   background-color: $transparent-background;
   padding: 20px;
 }

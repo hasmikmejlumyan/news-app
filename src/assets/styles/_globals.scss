@@ -9,3 +9,8 @@ body {
   width: 95%;
   margin: 40px auto;
 }
+
+.app-pages {
+  min-height: 100vh;
+  @include flex-box(space-between, initial, column);
+}

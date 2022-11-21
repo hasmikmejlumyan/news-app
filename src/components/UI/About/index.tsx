@@ -14,7 +14,7 @@ const About = () => {
                 </p>
 
                 <div className={styles['about-info']}>
-                    <div className={styles['about-info__discover']}>
+                    <div className={`${styles['about-info__discover']} shadow-lg`}>
                         <div className={styles['about-info__discover-image']}>
                             <img src={worldSvg} />
                         </div>
@@ -29,6 +29,20 @@ const About = () => {
                             </ul>
                             <p className={styles['about-info__discover-text']}>
                                 We will help you find all kinds of facts and news from the world
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={`${styles['about-info__discover']} shadow-lg`}>
+                        <div className={styles['about-info__discover-image']}>
+                            <img src={worldSvg} />
+                        </div>
+                        <div className={styles['about-info__discover-info']}>
+                            <p className={styles['about-info__discover-text']}>
+                                Keep your own news
+                            </p>
+                            <p className={styles['about-info__discover-text']}>
+                                Collect interesting materials and read whenever you want
                             </p>
                         </div>
                     </div>
