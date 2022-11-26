@@ -15,7 +15,7 @@ const Header = () => {
         <div className={styles['header-nav']}>
             <div className={styles['header-logo__box-content']}>
                 <h1>
-                    <Link to={'/'}>
+                    <Link to={'/homepage'}>
                         <img className={styles['header-logo__image']} src={logo} alt="logo" />
                         <span className={styles['header-logo__news']}>news</span>
                     </Link>

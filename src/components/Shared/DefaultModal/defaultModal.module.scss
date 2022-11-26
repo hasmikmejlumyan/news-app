@@ -1,0 +1,23 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.modal-overlay {
+  z-index: 9999;
+  max-width: 520px;
+  width: 95%;
+  min-height: 15vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  @include flex-box(center, center, row)
+}
+
+.modal-box {
+  display: block;
+  background: white;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
