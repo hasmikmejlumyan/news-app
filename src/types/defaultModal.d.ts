@@ -1,7 +1,8 @@
 import {ReactNode} from "react";
 
-export interface ModalType {
+export interface IModalType {
     refOutSide: RefObject<HTMLDivElement>;
     children?: ReactNode;
+    title: string;
     visible: boolean;
 }

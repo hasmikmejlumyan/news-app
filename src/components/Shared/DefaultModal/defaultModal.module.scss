@@ -2,6 +2,8 @@
 @import "../../../assets/styles/mixins";
 
 .modal-overlay {
+  padding: 1rem;
+  border-radius: 1rem;
   z-index: 9999;
   max-width: 520px;
   width: 95%;
@@ -10,14 +12,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: $header-background;
   @include flex-box(center, center, row)
 }
 
 .modal-box {
   display: block;
-  background: white;
+  background: $transparent-background;
   width: 100%;
   padding: 1rem;
   border-radius: 1rem;
+  @include flex-box(center, center, column)
 }
