@@ -11,7 +11,7 @@ const DefaultModal = (props: IModalType) => {
     return (
         <>
             {visible && (
-                <div ref={refOutSide} className={`${styles['modal-overlay']} shadow-xl`}>
+                <div ref={refOutSide} className={`${styles['modal-overlay']} shadow-2xl`}>
                     <div onClick={(e) => e.stopPropagation()} className={styles['modal-box']}>
                         <h2 className={styles['modal-title']}>{title}</h2>
                         {children}

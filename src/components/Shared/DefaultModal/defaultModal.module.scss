@@ -8,12 +8,14 @@
   max-width: 520px;
   width: 95%;
   min-height: 15vh;
+  max-height: 80vh;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: $header-background;
-  @include flex-box(center, center, row)
+  display: block;
+  overflow-y: auto;
 }
 
 .modal-box {
@@ -23,4 +25,9 @@
   padding: 1rem;
   border-radius: 1rem;
   @include flex-box(center, center, column)
+}
+
+.modal-title {
+  @include text-styles(25px, 600, $titles-text-color);
+  margin: 10px 0;
 }

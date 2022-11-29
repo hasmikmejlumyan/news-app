@@ -17,5 +17,50 @@ body {
 
 // Form
 .form {
-  background-color: $transparent-background;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-content {
+  @include flex-box(center, flex-start, column);
+  margin-bottom: 20px;
+}
+
+.form-content__label {
+  @include text-styles(14px, normal, $text-color);
+  margin-bottom: 6px;
+}
+
+.form-content__input {
+  width: 100%;
+  border: 1px solid $header-background;
+  border-radius: 3px;
+  height: 42px;
+  padding: 0 10px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1px 5px -1px $header-background;
+  }
+}
+
+.error-message {
+  margin-top: 4px;
+  @include text-styles(12px, normal, $error-message-color);
+}
+
+.form-btn {
+  max-width: 100px;
+  height: 35px;
+  width: 100%;
+  border-radius: 4px;
+  color: $transparent-background;
+  background-color: $btn-background;
+  align-self: center;
+  transition: .2s;
+
+  &:hover {
+    background-color: $header-background;
+  }
 }

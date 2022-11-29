@@ -52,14 +52,15 @@ const Login = () => {
                                 }
                             })}
                         />
-                        {errors.email && <span>{errors?.email.message}</span>}
+                        {errors.email && <span className='error-message'>{errors?.email.message}</span>}
                     </div>
 
-                    <div>
-                        <label htmlFor='password'>Password</label>
+                    <div className='form-content'>
+                        <label htmlFor='password' className='form-content__label'>Password</label>
                         <input
                            type='password'
                            id='password'
+                           className='form-content__input'
                            {...register('password', {
                                required: 'Password is a required field',
                                validate: value => value.trim().length > 0 || 'Password is a required field',
@@ -69,10 +70,10 @@ const Login = () => {
                                }
                            })}
                         />
-                        {errors.password && <span>{errors?.password.message}</span>}
+                        {errors.password && <span className='error-message'>{errors?.password.message}</span>}
                     </div>
 
-                    <input type='submit' />
+                    <button className='form-btn'>Log In</button>
                 </form>
             </DefaultModal>
         </>

@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
-
 // Components
 import Login from '../../../UI/Login';
+import Registration from '../../../UI/Registration';
 
 // Styles
 import styles from '../header.module.scss';
@@ -15,7 +14,7 @@ const Navigation = () => {
                     <Login />
                 </li>
                 <li className={styles['navigation__menu-list']}>
-                    <Link to={'/homepage/?query=register'}>Register</Link>
+                    <Registration />
                 </li>
             </ul>
         </nav>
