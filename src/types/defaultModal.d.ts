@@ -5,4 +5,5 @@ export interface IModalType {
     children?: ReactNode;
     title: string;
     visible: boolean;
+    onClose: () => void,
 }

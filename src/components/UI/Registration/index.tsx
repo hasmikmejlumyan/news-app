@@ -13,7 +13,7 @@ import { IRegistration } from "../../../types/registration";
 
 
 const Registration = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<IRegistration>();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm<IRegistration>();
 
     const [searchParams, setSearchParams] = useSearchParams();
     const ref = useRef<HTMLDivElement>(null);
@@ -21,12 +21,17 @@ const Registration = () => {
     const action = String(searchParams.get('query'));
     const visible = /^(registration)$/i.test(action);
 
+    const handleClose = () => {
+        setSearchParams();
+        reset();
+    };
+
     const onSubmit: SubmitHandler<IRegistration> = data => {
         console.log(data, 'data');  //TODO remove after creating the logic
     }
 
     const clickOutsideHandler = () => {
-        setSearchParams();
+        handleClose();
     };
 
     useOnClickOutside(ref, clickOutsideHandler);
@@ -36,7 +41,12 @@ const Registration = () => {
         <>
             <Link to={'/homepage/?query=registration'}>Register</Link>
 
-            <DefaultModal title='Registration' visible={visible} refOutSide={ref}>
+            <DefaultModal
+                title='Registration'
+                visible={visible}
+                refOutSide={ref}
+                onClose={handleClose}
+            >
                 <form onSubmit={handleSubmit(onSubmit)} className='form'>
                     <div className='form-content'>
                         <label htmlFor='name' className='form-content__label'>Name</label>

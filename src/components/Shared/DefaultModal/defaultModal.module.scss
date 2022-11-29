@@ -16,6 +16,7 @@
   background: $header-background;
   display: block;
   overflow-y: auto;
+  animation: .3s linear modalAnimation;
 }
 
 .modal-box {
@@ -30,4 +31,22 @@
 .modal-title {
   @include text-styles(25px, 600, $titles-text-color);
   margin: 10px 0;
+}
+
+.close-modal-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

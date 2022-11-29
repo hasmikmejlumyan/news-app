@@ -13,7 +13,7 @@ import { ILogin } from "../../../types/login";
 
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<ILogin>();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<ILogin>();
 
     const [searchParams, setSearchParams] = useSearchParams();
     const ref = useRef<HTMLDivElement>(null);
@@ -21,12 +21,17 @@ const Login = () => {
     const action = String(searchParams.get('query'));
     const visible = /^(login)$/i.test(action);
 
+    const handleClose = () => {
+        setSearchParams();
+        reset();
+    };
+
     const onSubmit: SubmitHandler<ILogin> = data => {
         console.log(data, 'data');  //TODO remove after creating logic
-    }
+    };
 
     const clickOutsideHandler = () => {
-        setSearchParams();
+        handleClose();
     };
 
     useOnClickOutside(ref, clickOutsideHandler);
@@ -36,7 +41,12 @@ const Login = () => {
         <>
             <Link to={'/homepage/?query=login'}>Log in</Link>
 
-            <DefaultModal title='Log In' visible={visible} refOutSide={ref}>
+            <DefaultModal
+                title='Log In'
+                visible={visible}
+                refOutSide={ref}
+                onClose={handleClose}
+            >
                 <form onSubmit={handleSubmit(onSubmit)} className='form'>
                     <div className='form-content'>
                         <label htmlFor='email' className='form-content__label'>Email</label>
